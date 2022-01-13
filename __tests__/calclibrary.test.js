@@ -31,7 +31,7 @@ describe("test sum with integers using test.each", () => {
     expect(sum(a, b)).toBe(expected);
   });
 });
-describe("test sum with integers using test.each", () => {
+describe("test sum with floats using test.each", () => {
   const testValues = [
     // a,b,expected
     [10, 11.5, 21.5],
@@ -56,14 +56,30 @@ describe("test missing parameter throw exception", () => {
     ["a", "parameter missing"],
     ["", "parameter missing"],
   ];
-  test.each(testValues)("sum(%s)=throws an exception: %s", (a, expected) => {
+  test.each(testValues)("sum(%s) throws an exception: %s", (a, expected) => {
     expect(() => sum(a)).toThrow(expected);
   });
   const testValues2 = [[null], [1], ["a"], [""]];
   test.each(testValues2)(
-    "sum(%s)=throws an exception: parameter missing",
+    "sum(%s) throws an exception: 'parameter missing'",
     (a) => {
       expect(() => sum(a)).toThrow("parameter missing");
+    }
+  );
+});
+
+describe("test parameter are not numbers", () => {
+  const testValues = [
+    ["a", 1],
+    [1, "a"],
+    ["a", "b"],
+    ["", ""],
+    ["1", "2"],
+  ];
+  test.each(testValues)(
+    "sum(%s,%s) throws an exception:'only numbers allowed'",
+    (a, b) => {
+      expect(() => sum(a, b)).toThrow("only numbers allowed");
     }
   );
 });
