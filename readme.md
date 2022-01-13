@@ -4,18 +4,18 @@
 
 Function returns the sum of two numbers, Numbers are passed to the function as parameters.
 
-Returns the sum of given number or
+Returns the sum of given number or throws exception
 
 - if parameter is missing, throws an exception :`'parameter missing`
-- if parameter are niot number, throws an exception: `'only numbers allowed`
+- if parameter are not number, throws an exception: `'only numbers allowed`
 
 ## **subtract(a,b)**
 
 Function returns the difference a-b of two numbers, Numbers are passed to the function as parameters.
-Returns the sum of given number or
+Returns the difference of given number or throws exception
 
 - if parameter is missing, throws an exception :`'parameter missing`
-- if parameter are niot number, throws an exception: `'only numbers allowed`
+- if parameter are not number, throws an exception: `'only numbers allowed`
 
 ### Test cases for sum
 
@@ -60,14 +60,14 @@ Returns the sum of given number or
 
 ### Test cases for subtract
 
-#### sum of parameters
+#### subtraction of parameters
 
 ###### Integers
 
-- sum(1,1) return 2
-- sum(2,3) return 5
-- sum(-2,-4) return -6
-- sum (-2, 4) return 2
+- subtract(1,1) return 2
+- subtract(2,3) return 5
+- subtract(-2,-4) return -6
+- subtract (-2, 4) return 2
   a, b, expected
   [2, 1, 1],
   [0, 0, 0],
