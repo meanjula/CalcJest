@@ -22,7 +22,7 @@ pipeline {
     stage ("deploy") {
       steps {
         echo 'deploying our app...'
-        sh 'make publish'
+        sh 'npm build'
       }
     }
 
