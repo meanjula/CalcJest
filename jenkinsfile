@@ -22,7 +22,6 @@ pipeline {
     stage ("deploy") {
       steps {
         echo 'deploying our app...'
-		sh 'run build'
       }
     }
 
