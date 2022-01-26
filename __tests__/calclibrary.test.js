@@ -43,7 +43,7 @@ describe("test sum with floats using test.each", () => {
     [2.4, -2.5, -0.1],
   ];
   test.each(testValues)("sum(%s,%s)=%s", (a, b, expected) => {
-    expect(sum(a, b)).toBeCloseTo(expected);
+    expect(sum(a, b)).toBeCloseTo(expected); // for floats toBeCloseTo() method use
   });
 });
 describe("test missing parameter throw exception", () => {
@@ -68,7 +68,7 @@ describe("test missing parameter throw exception", () => {
   );
 });
 
-describe("test parameter are not numbers", () => {
+describe("test parameter are not numbers with testfun", () => {
   const testValues = [
     ["a", 1],
     [1, "a"],
@@ -76,7 +76,8 @@ describe("test parameter are not numbers", () => {
     ["", ""],
     ["1", "2"],
   ];
-  test.each(testValues)(
+  const testfunction = test.each(testValues);
+  testfunction(
     "sum(%s,%s) throws an exception:'only numbers allowed'",
     (a, b) => {
       expect(() => sum(a, b)).toThrow("only numbers allowed");
