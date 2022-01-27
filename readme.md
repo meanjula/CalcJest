@@ -1,6 +1,6 @@
 # calculation Library
 
-This project is learning process of unit testing using jest and continuous integretion tools jenkins. Jenkins is run in docker for this project.
+This project is learning process of unit testing using jest and continuous integretion tools jenkins. Jenkins is install and run in docker for this project.
 
 ## technology used
 
